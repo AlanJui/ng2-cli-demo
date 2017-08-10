@@ -1,16 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from "@angular/http";
+
+import { AppRoutingModule } from "./app-routing.module";
+
+import { MakeService } from "./vehicle-form/make.service";
 
 import { AppComponent } from './app.component';
+import { NavMenuComponent } from './navmenu/navmenu.component';
+import { HomeComponent } from './home/home.component';
+import { FetchDataComponent } from './fetchdata/fetchdata.component';
+import { CounterComponent } from './counter/counter.component';
+import { VehicleFormComponent } from "./vehicle-form/vehicle-form.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavMenuComponent,
+    HomeComponent,
+    FetchDataComponent,
+    CounterComponent,
+    VehicleFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    // { provide: 'ORIGIN_URL', useValue: location.origin },
+    { provide: 'ORIGIN_URL', useValue: "http://localhost:5000" },
+    MakeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
