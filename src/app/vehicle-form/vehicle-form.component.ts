@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 })
 export class VehicleFormComponent implements OnInit {
   makes: any[];
+  models: any[];
   vehicle: any = {};
 
   constructor(private makeService: MakeService) { }
@@ -17,13 +18,15 @@ export class VehicleFormComponent implements OnInit {
   ngOnInit() {
     this.makeService.getMakes()
       .subscribe(makes => {
-        this.makes = makes
-        // console.log(`makes`, this.makes);
+        this.makes = makes;
+        console.log(`makes`, this.makes);
       });
     // this.makes = this.makeService.getMakes();
   }
 
   onMakeChange() {
     console.log(`Vehicle: `, this.vehicle);
+    let selectedMake = this.makes.find(m => m.id == this.vehicle.make);
+    this.models = selectedMake ? selectedMake.models : [];
   }
 }
