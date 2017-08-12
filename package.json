@@ -15,7 +15,7 @@
     "e2e": "ng e2e",
     "deploy": "git push origin master && git push heroku master",
     "heroku-prebuild": "",
-    "heroku-postbuild": "npm start",
+    "heroku-postbuild": "",
     "postinstall": "ng build --aot -prod"
   },
   "private": true,

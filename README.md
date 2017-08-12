@@ -26,3 +26,16 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+------
+
+
+## Deploy to Heroku
+
+```$xslt
+$ heroku config:set NPM_CONFIG_PRODUCTION=false
+
+$ git add . && git commit -m "Deploy to Heroku" && npm run deploy
+
+$ heroku open
+```
