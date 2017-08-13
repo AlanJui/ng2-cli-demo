@@ -9,6 +9,8 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
+    "dev": "ng serve --env=dev",
+    "prod": "ng build --env=prod && ng serve --env=prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

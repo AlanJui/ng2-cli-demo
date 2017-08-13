@@ -5,7 +5,7 @@ import { HttpModule } from "@angular/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 
-import { MakeService } from "./vehicle-form/make.service";
+import { VehicleService } from "./vehicle-form/vehicle.service";
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './navmenu/navmenu.component';
@@ -32,7 +32,7 @@ import { VehicleFormComponent } from "./vehicle-form/vehicle-form.component";
   providers: [
     // { provide: 'ORIGIN_URL', useValue: location.origin },
     { provide: 'ORIGIN_URL', useValue: "http://localhost:5000" },
-    MakeService
+    VehicleService
   ],
   bootstrap: [AppComponent]
 })
